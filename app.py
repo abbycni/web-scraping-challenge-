@@ -22,7 +22,7 @@ def index():
 
 def scraper():
     mars = mongo.db.mars
-    mars_data1 = scrape_mars.scrape()
+    mars_data1 = scrape_mars.scrape_data()
     mars.update_one({}, {"$set": mars_data1}, upsert=True)
     return redirect("/", code=302)
 
